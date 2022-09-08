@@ -1,0 +1,20 @@
+{
+    "@id": "dtmi:example:flameSensor;1",
+    "@type": "Interface",
+    "displayName": "FlameSensor",
+    "@context": "dtmi:dtdl:context;2",
+    "contents": [
+        {
+            "@type": "Property",
+            "name": "Flame_detected",
+            "writable": true,
+            "schema": "boolean"
+        },
+        {
+            "@type": "Property",
+            "name": "Flame_intensity",
+            "writable": true,
+            "schema": "double"
+        }
+    ]
+}
