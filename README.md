@@ -2,14 +2,14 @@
 ```
 Steps:
 1. Create IOT Hub
-    1. With rescue group if existing (hackathon), price 1900 per month
-    2. Create a IOT device testdevice001,  and copy and keep the primary connection string from there
+    1. With rescue group if existing or else create new one
+    2. Create a IOT device [testdevice001],  and copy and keep the primary connection string from there
 2. Create Digital Twin service
-    1. Copy the hostname or url of service
+    1. Copy the hostname or url of digital twin service created
     2. Download the ADT explorer  https://github.com/azure-samples/digital-twins-explorer/tree/main/ ( local copy is already present in the adt-explorer folder of this repo)
     3. Install az-cli
     4. Login to azure using. Az login 
-    5. Install nodes
+    5. Install nodejs
     6. in the explorer code go to client and run rpm install
     7. It will open the localhost:3000 In browser add digital twin there
     8. Import a model (check the model directory of this repo for sample model)
@@ -30,6 +30,7 @@ Steps:
             1. Copy the node code to update digital twin (copy from index.js from fxn-app)
             2. Try out the HTTP trigger by providing appropriate values in payload and trigger it
         2. Create IOT Hub trigger to connect it to IOT Hub
+        - [To be added]
 ```
 ### References
 ```
