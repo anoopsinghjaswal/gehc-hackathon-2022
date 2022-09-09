@@ -12,7 +12,7 @@ const BME280_OPTION = {
   i2cAddress: BME280.BME280_DEFAULT_I2C_ADDRESS() // defaults to 0x77
 };
 
-const connectionString = '[Your IoT hub device connection string]';
+const connectionString = 'DEVICE_CONNECTION_STRING';
 const LEDPin = 4;
 
 var sendingMessage = false;
@@ -29,7 +29,7 @@ function getMessage(cb) {
         deviceId: 'Raspberry Pi Web Client',
         temperature: data.temperature_C,
         humidity: data.humidity
-      }), data.temperature_C > 30);
+      }), data.temperature_C > 30, data.temperature_C,);
     })
     .catch(function (err) {
       console.error('Failed to read out sensor data: ' + err);
@@ -39,9 +39,10 @@ function getMessage(cb) {
 function sendMessage() {
   if (!sendingMessage) { return; }
 
-  getMessage(function (content, temperatureAlert) {
+  getMessage(function (content, flameDetected, flameIntensity) {
     var message = new Message(content);
-    message.properties.add('temperatureAlert', temperatureAlert.toString());
+    message.properties.add('flameDetected', flameDetected.toString());
+    message.properties.add('flameIntensity', flameIntensity.toString());
     console.log('Sending message: ' + content);
     client.sendEvent(message, function (err) {
       if (err) {

@@ -29,8 +29,27 @@ Steps:
         1. Create HTTP trigger for external testing 
             1. Copy the node code to update digital twin (copy from index.js from fxn-app)
             2. Try out the HTTP trigger by providing appropriate values in payload and trigger it
-        2. Create IOT Hub trigger to connect it to IOT Hub
-        - [To be added]
+        2. Create Event Grid trigger for connecting to event grid messages
+            1. Copy the node code to update digital twin (copy from eventGridTrigger.js from fxn-app)
+4. Create Event grid stream from IOT Hub
+    1. Go to event section > event subscription > create new
+    2. Provide subscription name, and resouce group
+    3. create a topic name
+    4. in the event types deselect all only keep device telemetry
+    5. select endpoint type as azure functions
+    6. in the left popup select the proper fucntion and corresponding trigger created for event grid
+    7. save the config
+5. Testing all the schema
+    1. go to function trigger (event schema) and monitor for logs
+    2. open raspberry pie simulator https://azure-samples.github.io/raspberry-pi-web-simulator/
+    3. copy the code from Raspberry-pi-sim> index.js and past in the webpage
+    4. run the simulator
+    5. then you'll see the logs in the function console
+    6. open ADT explorer
+    7. make seelect * query, it will show all digital twins
+    8. on every refresh the value will change
+    
+
 ```
 ### References
 ```
