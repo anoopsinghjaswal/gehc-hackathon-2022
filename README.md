@@ -42,6 +42,7 @@ Steps:
 5. Testing all the schema
     1. go to function trigger (event schema) and monitor for logs
     2. open raspberry pie simulator https://azure-samples.github.io/raspberry-pi-web-simulator/
+        1. chnage the connectionString on line 15 with the primary connection string of IOT device
     3. copy the code from Raspberry-pi-sim> index.js and past in the webpage
     4. run the simulator
     5. then you'll see the logs in the function console
