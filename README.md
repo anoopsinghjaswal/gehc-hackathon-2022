@@ -1,6 +1,10 @@
 ### Setup Steps
 ```
 Steps:
+0. Add Event Grid to your subscription
+    1. Go to Subscriptions > Resource providers
+    2. search for Event Grid
+    3. Register for Event grid
 1. Create IOT Hub
     1. With rescue group if existing or else create new one
     2. Create a IOT device [testdevice001],  and copy and keep the primary connection string from there
@@ -32,6 +36,7 @@ Steps:
         2. Create Event Grid trigger for connecting to event grid messages
             1. Copy the node code to update digital twin (copy from eventGridTrigger.js from fxn-app)
 4. Create Event grid stream from IOT Hub
+    0. Make sure you have event grid resouce provider registered for your subscription (step 0)
     1. Go to event section > event subscription > create new
     2. Provide subscription name, and resouce group
     3. create a topic name
