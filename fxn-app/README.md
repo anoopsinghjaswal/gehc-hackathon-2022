@@ -55,3 +55,39 @@ curl -X POST \
 (eventGridEvent.data.body) base64 to JSON
 {"messageId":11,"deviceId":"Raspberry Pi Web Client","temperature":25.392375779726308,"humidity":76.39404260045663}
 ```
+
+### error for invalid JSON
+```
+RestError: temperaturedoesnotexistoncomponent.Pleaseprovideavalidpatchdocument.Seesectiononupdateapisinthedocumentationhttps: //aka.ms/adtv2twins.{
+  "name": "RestError",
+  "code": "JsonPatchInvalid",
+  "statusCode": 400,
+  "request": {
+    "streamResponseStatusCodes": {
+      
+    },
+    "url": "https://sample1.api.eus.digitaltwins.azure.net/digitaltwins/testdevice002?api-version=2022-05-31",
+    "method": "PATCH",
+    "headers": {
+      "_headersMap": {
+        "content-type": "application/json-patch+json",
+        "user-agent": "azsdk-js-digital-twins-core/1.1.0 core-http/2.2.7 Node/v16.16.0 OS/(ia32-Windows_NT-10.0.14393)",
+        "x-ms-client-request-id": "59dc64bf-a3c0-4e14-a975-3d943c9e2274",
+        "authorization": "REDACTED",
+        "cookie": "REDACTED"
+      }
+    },
+    "withCredentials": false,
+    "timeout": 0,
+    "keepAlive": true,
+    "requestId": "59dc64bf-a3c0-4e14-a975-3d943c9e2274"
+  },
+  "details": {
+    "error": {
+      "code": "JsonPatchInvalid",
+      "message": "temperature does not exist on component. Please provide a valid patch document. See section on update apis in the documentation https://aka.ms/adtv2twins."
+    }
+  },
+  "message": "temperature does not exist on component. Please provide a valid patch document. See section on update apis in the documentation https://aka.ms/adtv2twins."
+}
+```
