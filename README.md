@@ -54,6 +54,18 @@ Steps:
     6. open ADT explorer
     7. make seelect * query, it will show all digital twins
     8. on every refresh the value will change
+6. Creating Timeseries insight for IOT hub
+    1. Go to Subscription > resource provider 
+    2. search for storage and register for microsoft.storage and microsoft.classicstorage
+    3. go to IOT hub > hub setting > built-in endpoints
+    4. consumer group create agroup name 'iot-hub-consumer'
+    5. go to time series insights and create a resource 
+    6. select subscription, provide instance name, env name, ans storage name
+    7. for property name select one that comes from IOT message 'iothub-connection-device-id'
+    8. go to event source provide name select IOT hub, access policy and consumer group 'iot-hub-consumer'
+    9. review and create the resource
+    10. Due to some problem/ limited access with trial account the Timeseries insight explorer app will not be accessible, but if you simulate the IOT messages, you'll see the same reflecting in metrics/overview section
+    11. Instead of TSI explorer JS client can be user to query the datasou
     
 
 ```
@@ -73,4 +85,11 @@ https://azure-samples.github.io/raspberry-pi-web-simulator/
 
 Node Library for Digital Twin
 https://www.npmjs.com/package/@azure/digital-twins-core 
+
+TimeSeries integration
+https://www.youtube.com/watch?v=9SG146HnxJU
+
+https://learn.microsoft.com/en-us/azure/time-series-insights/how-to-ingest-data-iot-hub
+
+
 ```
